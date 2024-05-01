@@ -7,4 +7,4 @@
 # ------------------------------------------------------------------------------------------------
 
 from .flash_deform_attn import FlashDeformAttn
-from .dcnv4 import DCNv4
+from .dcnv4 import DCNv4, DCNv4_pytorch

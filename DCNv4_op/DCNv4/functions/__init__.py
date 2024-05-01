@@ -8,4 +8,4 @@
 
 # from .ms_flash_deform_attn_func import FlashMSDeformAttnFunction
 from .flash_deform_attn_func import FlashDeformAttnFunction
-from .dcnv4_func import DCNv4Function
+from .dcnv4_func import DCNv4Function, dcnv4_core_pytorch

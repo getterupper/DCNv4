@@ -24,3 +24,8 @@ segmentation/data
 segmentation/ckpts
 work_dirs/
 output
+.vscode/
+autonomous_driving/SurroundOcc/data
+autonomous_driving/SurroundOcc/mmdetection3d
+autonomous_driving/SurroundOcc/ckpts
+autonomous_driving/SurroundOcc/work_dirs

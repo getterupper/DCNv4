@@ -1,0 +1,17 @@
+DATA:
+  IMG_ON_MEMORY: False
+MODEL:
+  TYPE: resnet_101
+  DROP_PATH_RATE: 0.4
+  RESNET_101:
+    DEPTH: 101
+    NUM_STAGES: 4
+    FROZEN_STAGES: -1
+    STYLE: 'caffe'
+    WITH_CP: False
+    GROUPS: [4, 8, 16, 32]
+TRAIN:
+  EMA:
+    ENABLE: True
+    DECAY: 0.9999
+  BASE_LR: 5e-4

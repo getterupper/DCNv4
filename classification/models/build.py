@@ -7,6 +7,7 @@
 
 from .intern_image import InternImage
 from .flash_intern_image import FlashInternImage
+from .resnet_custom import CustomResNet
 
 def build_model(config):
     model_type = config.MODEL.TYPE
@@ -51,6 +52,15 @@ def build_model(config):
             level2_post_norm=config.MODEL.FLASH_INTERN_IMAGE.LEVEL2_POST_NORM, # for InternImage-H/G
             level2_post_norm_block_ids=config.MODEL.FLASH_INTERN_IMAGE.LEVEL2_POST_NORM_BLOCK_IDS, # for InternImage-H/G
             center_feature_scale=config.MODEL.FLASH_INTERN_IMAGE.CENTER_FEATURE_SCALE # for InternImage-H/G
+        )
+    elif model_type == 'resnet_101':
+        model = CustomResNet(
+            depth=config.MODEL.RESNET_101.DEPTH,
+            num_stages=config.MODEL.RESNET_101.NUM_STAGES,
+            frozen_stages=config.MODEL.RESNET_101.FROZEN_STAGES,
+            style=config.MODEL.RESNET_101.STYLE,
+            with_cp=config.MODEL.RESNET_101.WITH_CP,
+            groups=config.MODEL.RESNET_101.GROUPS
         )
     else:
         raise NotImplementedError(f"Unkown model: {model_type}")

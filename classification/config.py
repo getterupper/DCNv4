@@ -98,6 +98,16 @@ _C.MODEL.FLASH_INTERN_IMAGE.LEVEL2_POST_NORM_BLOCK_IDS = None
 _C.MODEL.FLASH_INTERN_IMAGE.CENTER_FEATURE_SCALE = False
 _C.MODEL.FLASH_INTERN_IMAGE.MLP_FC2_BIAS = False
 _C.MODEL.FLASH_INTERN_IMAGE.DCN_OUTPUT_BIAS = False
+
+# RESNET_101 parameters
+_C.MODEL.RESNET_101 = CN()
+_C.MODEL.RESNET_101.DEPTH = 101
+_C.MODEL.RESNET_101.NUM_STAGES = 4
+_C.MODEL.RESNET_101.FROZEN_STAGES = -1
+_C.MODEL.RESNET_101.STYLE = 'caffe'
+_C.MODEL.RESNET_101.WITH_CP = False
+_C.MODEL.RESNET_101.GROUPS = [4, 8, 16, 32]
+
 # -----------------------------------------------------------------------------
 # Training settings
 # -----------------------------------------------------------------------------
